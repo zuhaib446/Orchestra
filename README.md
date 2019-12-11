@@ -18,7 +18,7 @@ Local Amazon Web Services Emulator
 
 Orchestra is a simple emulator for AWS lambda run time, Api gateway and DynamoDB local. Once set up you can view the test apigateway and test lambda functions.
 To create an Api create a file in the apigateway folder, the name of the file will be used for naming the Api the api file should export a array of resources and methods in the following form 
-
+```
 exports.api = [
 	{
 		resource:"test",
@@ -31,7 +31,7 @@ exports.api = [
 		]
 	}
 ]
-
+```
 The above code will create a route /test/test/:id and link it to the lambda function test 
 
 To create a lambda function creat a folder in the lambda folder with the name of the lambda function and it should contain an index file which exports a handler just like the lambda in the AWS 
