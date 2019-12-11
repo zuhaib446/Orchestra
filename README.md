@@ -13,3 +13,27 @@ Local Amazon Web Services Emulator
 3. cp .env.sample .env
 4. npm install
 5. sudo docker-compose up --build
+
+# Usage
+
+Orchestra is a simple emulator for AWS lambda run time, Api gateway and DynamoDB local. Once set up you can view the test apigateway and test lambda functions.
+To create an Api create a file in the apigateway folder, the name of the file will be used for naming the Api the api file should export a array of resources and methods in the following form 
+
+exports.api = [
+	{
+		resource:"test",
+		methods:[
+			{
+				method:"GET",
+				lambda:"test",
+				parameters:["id"]
+			}
+		]
+	}
+]
+
+The above code will create a route /test/test/:id and link it to the lambda function test 
+
+To create a lambda function creat a folder in the lambda folder with the name of the lambda function and it should contain an index file which exports a handler just like the lambda in the AWS 
+
+Currently working on the DynamoDB CLI tools for now you can problematically create DynamoDB tables 
