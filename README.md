@@ -32,7 +32,7 @@ exports.api = [
 	}
 ]
 ```
-The above code will create a route /test/test/:id and link it to the lambda function test 
+The above code will create a route `GET /test/test/:id` and link it to the lambda function `test` 
 
 To create a lambda function creat a folder in the lambda folder with the name of the lambda function and it should contain an index file which exports a handler just like the lambda in the AWS 
 
