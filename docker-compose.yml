@@ -1,0 +1,11 @@
+version: '3'
+services:
+  dynamodb:
+    image: "amazon/dynamodb-local"
+  serverless:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    command: nodemon -L server.js
