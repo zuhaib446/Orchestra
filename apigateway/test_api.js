@@ -4,7 +4,7 @@ exports.api = [
 		methods:[
 			{
 				method:"GET",
-				lambda:"test",
+				lambda:"echo",
 				parameters:["id"]
 			}
 		]
