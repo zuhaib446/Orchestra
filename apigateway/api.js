@@ -1,6 +1,6 @@
 exports.api = [
 	{
-		resource:"test",
+		resource:"echo",
 		methods:[
 			{
 				method:"GET",
