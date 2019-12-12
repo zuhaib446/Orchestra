@@ -14,6 +14,8 @@ Local Amazon Web Services Emulator
 4. npm install
 5. sudo docker-compose up --build
 
+You can now visit `http://localhost:3000/test/test/any-string` 
+
 # Usage
 
 Orchestra is a simple emulator for AWS lambda run time, Api gateway and DynamoDB local. Once set up you can view the test apigateway and test lambda functions.
