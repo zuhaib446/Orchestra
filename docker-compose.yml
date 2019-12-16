@@ -1,8 +1,14 @@
 version: '3'
+
 services:
   dynamodb:
     image: "amazon/dynamodb-local"
+    command: -jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodb/data/
+    volumes:
+     - .:/home/dynamodb/data
   serverless:
+    depends_on: 
+      - dynamodb
     build: .
     ports:
       - "3000:3000"
