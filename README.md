@@ -18,7 +18,7 @@ You can now visit `http://localhost:3000/api/echo/any-string`
 
 # Usage
 
-Orchestra is a simple emulator for AWS lambda run time, Api gateway and DynamoDB local. Once set up you can view the test apigateway and test lambda functions.
+Orchestra is a simple emulator for AWS lambda run time (nodejs) , Api gateway, DynamoDB local ad S3 http static. Once set up you can view the test apigateway and test lambda functions.
 To create an Api create a file in the apigateway folder, the name of the file will be used for naming the Api the api file should export a array of resources and methods in the following form 
 
 ```
