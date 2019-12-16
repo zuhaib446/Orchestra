@@ -1,6 +1,4 @@
 const express = require('express');
-const path = require('path');
-const favicon = require('serve-favicon');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const AWS = require("aws-sdk");
@@ -21,9 +19,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-setup.apply(app).catch(console.error);
+setup.apply(app)
+	.then(function(){
+		app.listen(parseInt(process.env.SERVER_PORT), function (){ 
+			console.log(`Orchestra launched @ ${process.env.SERVER_PORT} `)
+		})
+	})
+	.catch(console.error);
 
-app.listen(parseInt(process.env.SERVER_PORT), function (){ 
-	console.log(`V4 PLAS launched @ ${process.env.SERVER_PORT} `)
-})
 
