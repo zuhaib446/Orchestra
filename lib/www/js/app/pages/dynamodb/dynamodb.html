@@ -1,0 +1,71 @@
+<button class="btn btn-secondary m-2" id="add-table-button"><i class="fa fa-fw fa-save"></i>Create New Table</button>
+
+<table class="table table-bordered" style="text-align: center">
+	<thead>
+		<tr>
+			<th style='width:14vw'>#</th>
+			<th style='width:53vw'>Name</th>
+			<th style='width:33vw'>Action</th>
+		</tr>
+	</thead>
+	<tbody id="dynamodb-table-names"></tbody>
+</table>
+
+<div class="modal fade" id="add-table-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Add New Table</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form novalidate="true" id="add-table-form">
+					<div class="form-row">
+						<div class="form-group col-md-12">
+							<label for="inputTablename">Table Name *</label>
+							<input type="text" class="form-control" id="inputTablename" name="tablename" required>
+							<div class="invalid-feedback">
+								Table name is required
+							</div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="partition-id">Partition Key *</label>
+							<input type="text" class="form-control" id="partition-id" name="partitionkey" required>
+							<div class="invalid-feedback">
+								Partition key is required
+							</div>
+						</div>
+						<div class="form-group col-md-6">
+							<label for="inputState">Type</label>
+							<select id="partitiontype" class="form-control" name="partitiontype">
+								<option value="S" selected>String</option>
+								<option value="N">Number</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="sort-id">Sort Key</label>
+							<input type="text" class="form-control" id="sort-id" name="sortkey">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="inputState">Type</label>
+							<select id="sorttype" class="form-control" name="sorttype">
+								<option value="S" selected>String</option>
+								<option value="N">Number</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" id="add-table-save-btn">Save</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
