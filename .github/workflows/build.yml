@@ -19,5 +19,3 @@ jobs:
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm install
 
-      - name: NPM Build
-        run: npm run build -- --cache
