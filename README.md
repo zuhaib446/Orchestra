@@ -1,3 +1,4 @@
+![build](https://github.com/limplash/Orchestra/workflows/build/badge.svg)
 # Orchestra
 Local Amazon Web Services Emulator
 
